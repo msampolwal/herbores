@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layouts/default-list-layout}">
+  <head id="head">
+
+    <title data-th-text="|#{label_show_entity(#{label_proveedor})}|">Show Proveedor - Spring Roo application</title>
+
+  </head>
+
+  <body id="body">
+
+    <header role="banner">
+      <!-- Content replaced by layout of the page displayed -->
+    </header>
+
+    <!--CONTAINER-->
+    <div class="container bg-container">
+      <!-- CONTENT -->
+      <!--
+        Only the inner content of the following tag "section" is included
+        within the template, in the section "content"
+      -->
+      <section data-layout-fragment="content" data-th-object="${proveedor}">
+        <div class="container-fluid content">
+
+          <!-- CONTENT -->
+          <h1 data-th-text="#{label_show_entity(#{label_proveedor})}">Show Proveedor</h1>
+
+            <div id="mainEntityFieldSet">
+              <h2 data-th-text="#{label_data_entity(#{label_proveedor})}">Proveedor data</h2>
+              <ul class="list-unstyled" id="containerFields">
+                  <li id="proveedor-razonsocial-field" data-z="fbea530b">
+            	      <strong data-th-text="#{label_proveedor_razonsocial}">razonSocial</strong>
+                    <span data-th-text="*{{razonSocial}}">razonSocialValue</span>
+         	        </li>
+                  <li id="proveedor-cuit-field" data-z="f051c0d3">
+            	      <strong data-th-text="#{label_proveedor_cuit}">cuit</strong>
+                    <span data-th-text="*{{cuit}}">cuitValue</span>
+         	        </li>
+                  <li id="proveedor-domicilio-field" data-z="77b3cc2b">
+            	      <strong data-th-text="#{label_proveedor_domicilio}">domicilio</strong>
+                    <span data-th-text="*{{domicilio}}">domicilioValue</span>
+         	        </li>
+                  <li id="proveedor-telefono-field" data-z="41b037f3">
+            	      <strong data-th-text="#{label_proveedor_telefono}">telefono</strong>
+                    <span data-th-text="*{{telefono}}">telefonoValue</span>
+         	        </li>
+                  <li id="proveedor-email-field" data-z="787f774b">
+            	      <strong data-th-text="#{label_proveedor_email}">email</strong>
+                    <span data-th-text="*{{email}}">emailValue</span>
+         	        </li>
+              </ul>
+            </div>
+
+
+          <div class="clearfix">
+            <div class="pull-right">
+             <a id="Proveedor_edit" href="edit.html" class="btn btn-primary" data-th-title="#{label_goEdit}" data-th-href="${@linkBuilder.of('ProveedorsItemThymeleafController').to('editForm').with('proveedor', proveedor.id)}" data-th-text="#{label_edit}">Edit</a>
+            </div>
+          </div>
+
+
+          <div class="clearfix">
+            <div class="pull-left">
+              <a id="Proveedor_list" href="list.html" class="btn btn-default" data-th-title="#{label_goBack}" data-th-href="${@linkBuilder.of('ProveedorsCollectionThymeleafController').to('list')}">
+  	             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  	             <span data-th-text="#{label_back}">Back</span>
+  	          </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- /CONTENT -->
+  </div>
+  <!-- /CONTAINER -->
+
+  <footer class="container">
+    <!-- Content replaced by layout of the page displayed -->
+  </footer>
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so that the pages load faster -->
+  <!-- JavaScript loaded by layout of the page displayed -->
+  <!--
+       Only the inner content of the following tag "javascript" is included
+       within the template, in the div "javascript"
+      -->
+  <div data-layout-fragment="javascript">
+  </div>
+
+  </body>
+
+</html>

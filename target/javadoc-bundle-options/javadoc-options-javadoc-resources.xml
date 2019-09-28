@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javadocOptions>
+  <docletArtifacts>
+    <docletArtifact>
+      <groupId>org.asciidoctor</groupId>
+      <artifactId>asciidoclet</artifactId>
+      <version>1.5.4</version>
+    </docletArtifact>
+  </docletArtifacts>
+  <tagletArtifacts>
+    <tagletArtifact />
+  </tagletArtifacts>
+  <links>
+    <link>http://docs.oracle.com/javase/1.8/docs/api/</link>
+    <link>http://docs.oracle.com/javaee/8/api/</link>
+    <link>http://docs.spring.io/spring-framework/docs/4.3.3.RELEASE/javadoc-api/</link>
+    <link>http://docs.spring.io/spring-boot/docs/1.4.1.RELEASE/api/</link>
+    <link>http://fasterxml.github.io/jackson-core/javadoc/2.8/</link>
+    <link>http://fasterxml.github.io/jackson-databind/javadoc/2.8</link>
+    <link>http://cxf.apache.org/javadoc/latest-3.1.x/</link>
+  </links>
+  <javadocResourcesDirectory>src/main/javadoc</javadocResourcesDirectory>
+</javadocOptions>

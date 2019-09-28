@@ -1,0 +1,55 @@
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2019-09-28 01:15:25
+project setup --topLevelPackage com.msw --projectName "Herbores" --java 8 --packaging JAR
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log closed at 2019-09-28 01:15:26
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2019-09-28 01:15:29
+jpa setup --provider HIBERNATE --database MYSQL --hostName localhost --userName root --password hsq00mmvh --databaseName herbores
+entity jpa --class ~.Proveedor
+field string --fieldName razonSocial
+field number --fieldName cuit --type java.lang.Long
+field string --fieldName domicilio
+field string --fieldName telefono
+field string --fieldName email
+entity jpa --class ~.Producto
+// [failed] field string --fieldName nombre
+field string --fieldName descripcion
+entity jpa --class ~.Presentacion
+field string --fieldName descripcion
+field number --fieldName precio --type java.math.BigDecimal
+entity jpa --class ~.Factura
+field number --fieldName importe --type java.math.BigDecimal
+entity jpa --class ~.ItemFactura
+field number --fieldName importe --type java.math.BigDecimal
+field number --fieldName cantidad --type java.lang.Integer
+entity jpa --class ~.Cliente
+field string --fieldName razonSocial
+field string --fieldName documento
+field string --fieldName telefono
+field string --fieldName email
+focus --class ~.Producto
+focus --class ~.Proveedor
+field set --fieldName productos --type ~.Producto --mappedBy proveedor
+focus --class ~.Producto
+field set --fieldName presentaciones --type ~.Presentacion --mappedBy producto
+focus --class ~.ItemFactura
+field reference --fieldName presentacion --type ~.Presentacion
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2019-09-28 02:15:25
+focus --class ~.ItemFactura
+field reference --fieldName presentacion --type ~.Presentacion --joinColumnName presentacion_id
+focus --class ~.Factura
+field set --fieldName items --type ~.ItemFactura --mappedBy factura
+field date --fieldName fecha --type java.util.Calendar
+focus --class ~.Presentacion 
+field number --fieldName stock --type java.lang.Long
+focus --class ~.Producto
+field string --fieldName nombre
+repository jpa --all --package com.msw.dao
+service --all --apiPackage com.msw.service.api
+web mvc setup 
+web mvc view setup --type THYMELEAF 
+web mvc templates setup --type THYMELEAF 
+web mvc controller --all --responseType THYMELEAF --package com.msw.view
+web mvc detail --entity ~.Factura --field itemsFactura --responseType THYMELEAF --views list,show
+web mvc detail --entity ~.Factura --field itemsFactura --responseType THYMELEAF --views list,show
+web mvc finder --all --responseType THYMELEAF --package com.msw.finder
+security setup --provider SPRINGLETS_JPA 
+jpa setup --provider HIBERNATE --profile dev --database H2_IN_MEMORY 

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Herbores
+Implementation-Version: 1.0.0.BUILD-SNAPSHOT
+Built-By: Mariano
+Implementation-Vendor-Id: com.msw
+Build-Jdk: 1.8.0_151
+Implementation-URL: http://platform.spring.io/platform/herbores/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

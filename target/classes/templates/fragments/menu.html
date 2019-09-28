@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page menu</title>
+  </head>
+  <body id="body">
+    <!--
+    Only the internal content of the following div is included within
+    the template, in menu fragment
+    -->
+    <nav class="navbar navbar-default navbar-static-top" data-th-fragment="menu">
+
+         <div class="container">
+
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainnav" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <!-- Brand logo -->
+              <div class="organization-logo navbar-brand">
+                <a title="Herbores" href="/" data-th-href="@{/}">
+                  <img alt="Herbores" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
+                </a>
+              </div>
+              <!-- Name application -->
+              <div class="application-name navbar-brand hidden-xs">
+                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">Herbores</a>
+              </div>
+
+            </div><!-- /navbar-header -->
+
+            <div id="mainnav" class="navbar-collapse collapse">
+
+              <ul class="nav navbar-nav" id="entitiesMenuEntries">
+                <li class="dropdown" id="cliente-entry" data-z="5b7dd6">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_cliente})}">Cliente<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/clientes/create-form" data-th-href="@{/clientes/create-form}" data-th-utext="#{label_create_entity(#{label_cliente})}">Create Cliente</a></li>
+	                  <li><a href="/clientes" data-th-href="@{/clientes}" data-th-utext="#{label_list_entity(#{label_cliente_plural})}">List Cliente</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="factura-entry" data-z="556ac5d6">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_factura})}">Factura<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/facturas/create-form" data-th-href="@{/facturas/create-form}" data-th-utext="#{label_create_entity(#{label_factura})}">Create Factura</a></li>
+	                  <li><a href="/facturas" data-th-href="@{/facturas}" data-th-utext="#{label_list_entity(#{label_factura_plural})}">List Factura</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="itemfactura-entry" data-z="2fb2ce36">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_itemfactura})}">ItemFactura<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/itemfacturas/create-form" data-th-href="@{/itemfacturas/create-form}" data-th-utext="#{label_create_entity(#{label_itemfactura})}">Create ItemFactura</a></li>
+	                  <li><a href="/itemfacturas" data-th-href="@{/itemfacturas}" data-th-utext="#{label_list_entity(#{label_itemfactura_plural})}">List ItemFactura</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="presentacion-entry" data-z="b4d3ce68">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_presentacion})}">Presentacion<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/presentacions/create-form" data-th-href="@{/presentacions/create-form}" data-th-utext="#{label_create_entity(#{label_presentacion})}">Create Presentacion</a></li>
+	                  <li><a href="/presentacions" data-th-href="@{/presentacions}" data-th-utext="#{label_list_entity(#{label_presentacion_plural})}">List Presentacion</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="producto-entry" data-z="cc0f808f">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_producto})}">Producto<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/productoes/create-form" data-th-href="@{/productoes/create-form}" data-th-utext="#{label_create_entity(#{label_producto})}">Create Producto</a></li>
+	                  <li><a href="/productoes" data-th-href="@{/productoes}" data-th-utext="#{label_list_entity(#{label_producto_plural})}">List Producto</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="proveedor-entry" data-z="917c9016">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_proveedor})}">Proveedor<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/proveedors/create-form" data-th-href="@{/proveedors/create-form}" data-th-utext="#{label_create_entity(#{label_proveedor})}">Create Proveedor</a></li>
+	                  <li><a href="/proveedors" data-th-href="@{/proveedors}" data-th-utext="#{label_list_entity(#{label_proveedor_plural})}">List Proveedor</a></li>
+                 </ul>
+                </li>
+              </ul>
+
+              <!-- Language select -->
+              <ul class="nav navbar-nav navbar-right upper-nav languages" data-th-replace="~{fragments/languages :: languages}">
+                <!-- Content replaced by the session template fragment language.html
+                -->
+                <span>Language data</span>
+              </ul>
+
+
+
+              <!-- User menu links -->
+              <ul class="nav navbar-nav navbar-right upper-nav links" data-th-replace="~{fragments/session-links :: links}">
+                <!-- Content replaced by the links template fragment session-links.html
+                -->
+                <span>User session data</span>
+              </ul>
+           </div>
+
+          </div>
+    </nav>
+
+    <!--
+    Only the internal content of the following div is included within
+    the template, in menu-languages fragment
+    -->
+    <nav class="navbar navbar-default navbar-static-top" data-th-fragment="menu-languages">
+
+         <div class="container">
+
+            <div class="navbar-header">
+
+              <!-- Brand logo -->
+              <div class="organization-logo navbar-brand">
+                <a title="Herbores" href="/" data-th-href="@{/}">
+                  <img alt="Herbores" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
+                </a>
+              </div>
+              <!-- Name application -->
+              <div class="application-name navbar-brand hidden-xs">
+                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">Herbores</a>
+              </div>
+
+            </div><!-- /navbar-header -->
+
+            <div id="mainnav" class="navbar-collapse collapse">
+
+              <!-- Language select -->
+              <ul class="nav navbar-nav navbar-right upper-nav languages" data-th-replace="~{fragments/languages :: languages}">
+                <!-- Content replaced by the session template fragment language.html
+                -->
+                <span>Language data</span>
+              </ul>
+
+           </div>
+
+          </div>
+    </nav>
+
+  </body>
+</html>
